@@ -5,6 +5,7 @@ dotenv.config({ path: '.env' });
 module.exports = {
   siteMetadata: {
     title: 'audicore',
+    siteUrl: 'https://toms-audiocore.netlify.app',
   },
   plugins: [
     {
