@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const HeaderStyles = styled.header`
   width: 100vw;
@@ -13,13 +14,20 @@ const HeaderStyles = styled.header`
     transform: skew(7deg);
     display: inline;
   }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 `;
 
 export default function Header() {
   return (
     <HeaderStyles>
       <div className="container">
-        <h1>AudioC0RE!</h1>
+        <Link to="/">
+          <h1>AudioC0RE!</h1>
+        </Link>
       </div>
     </HeaderStyles>
   );
