@@ -14,7 +14,7 @@ const HomeStyled = styled.div`
     list-style: none;
     display: inline-block;
     margin: 5px;
-    background: rgba(102, 51, 153, 0.3);
+    background: rgba(102, 51, 153, 0.1);
     color: rgba(102, 51, 153, 0.7);
     cursor: pointer;
     border-radius: 5px;
@@ -28,9 +28,10 @@ const HomeStyled = styled.div`
   }
 `;
 
+// graphql query fetches the required data
 export const query = graphql`
-  query All_CITIES {
-    cities: allContentfulCity {
+  query All_CITIES_HOMEPAGE {
+    cities: allContentfulCity(sort: { order: ASC, fields: title }) {
       nodes {
         title
         description
