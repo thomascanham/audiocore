@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  AudioC0RE - #100 days of Gatsby Challange 2021
 </h1>
 
 ## 🚀 Quick start

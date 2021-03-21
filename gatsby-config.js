@@ -1,28 +1,32 @@
-module.exports = {
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env' });
+
+export default {
   siteMetadata: {
-    title: "audicore",
+    title: 'audicore',
   },
   plugins: [
     {
-      resolve: "gatsby-source-contentful",
+      resolve: 'gatsby-source-contentful',
       options: {
-        accessToken: "xrS0S-lZ5XqXBfQv7iLCMdZE2a-HrDLTO2qEP95d4xE",
-        spaceId: "7bsp4jiv83pb",
+        accessToken: process.env.CONTENTFULL_ACCESS_TOKEN,
+        spaceId: process.env.CONTENTFULL_SPACEID,
       },
     },
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/images/',
       },
-      __key: "images",
+      __key: 'images',
     },
   ],
 };
