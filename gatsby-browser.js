@@ -1,7 +1,12 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
 import Layout from './src/components/layout/Layout';
 
 export function wrapPageElement({ element, props }) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Layout {...props}>{element}</Layout>;
+  return (
+    <ChakraProvider>
+      <Layout {...props}>{element}</Layout>
+    </ChakraProvider>
+  );
 }

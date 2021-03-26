@@ -2,29 +2,27 @@ import { graphql, Link } from 'gatsby';
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import {
+  Heading,
+  Container,
+  UnorderedList,
+  ListItem,
+  Tag,
+} from '@chakra-ui/react';
 
-const HomeStyled = styled.div`
-  padding-top: 60px;
+const UL = styled(UnorderedList)`
+  display: inline-block;
+  list-style: none;
+  margin-left: 0 !important;
+`;
 
-  h2 {
-    padding-bottom: 30px;
-  }
+const ListItemStyled = styled(ListItem)`
+  list-style: none;
+  display: inline-block;
+  padding: 16px;
 
-  li {
-    list-style: none;
-    display: inline-block;
-    margin: 5px;
-    background: rgba(102, 51, 153, 0.1);
-    color: rgba(102, 51, 153, 0.7);
-    cursor: pointer;
-    border-radius: 5px;
-
-    a {
-      text-decoration: none;
-      color: rgba(102, 51, 153, 0.7);
-      padding: 8px;
-      display: block;
-    }
+  &:first-child {
+    padding-left: 0;
   }
 `;
 
@@ -44,17 +42,18 @@ export const query = graphql`
 
 export default function Home({ data }) {
   return (
-    <HomeStyled className="container">
-      <h2>Home Page</h2>
-      <h4>Our Locations</h4>
-      <ul>
+    <Container maxW="container.lg" style={{ paddingTop: '60px' }}>
+      <Heading as="h2">Our Locations</Heading>
+      <UL>
         {data.cities.nodes.map((city) => (
-          <li key={city.id}>
-            <Link to={`/location/${city.slug}`}>{city.title}</Link>
-          </li>
+          <ListItemStyled key={city.id}>
+            <Link to={`/location/${city.slug}`}>
+              <Tag colorScheme="purple">{city.title}</Tag>
+            </Link>
+          </ListItemStyled>
         ))}
-      </ul>
-    </HomeStyled>
+      </UL>
+    </Container>
   );
 }
 

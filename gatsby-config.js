@@ -21,6 +21,7 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    '@chakra-ui/gatsby-plugin',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

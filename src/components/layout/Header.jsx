@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+import { Heading, Container } from '@chakra-ui/react';
+
 const HeaderStyles = styled.header`
   width: 100vw;
   padding: 30px 0;
@@ -24,11 +26,11 @@ const HeaderStyles = styled.header`
 export default function Header() {
   return (
     <HeaderStyles>
-      <div className="container">
+      <Container maxW="container.lg">
         <Link to="/">
-          <h1>AudioC0RE!</h1>
+          <Heading as="h1">AudioC0RE!</Heading>
         </Link>
-      </div>
+      </Container>
     </HeaderStyles>
   );
 }
